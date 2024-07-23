@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <!-- 최저시급을 입력받아 월급과 연봉을 출력하시오
+    월급은 최저시급 *209
+    올해의 최저시급 9860원
+    연봉 *12 -->
+</head>
+<body>
+    <script>
+        const input1 = prompt('9860');
+        const input2 = prompt('209');
+        const input3 = prompt('12');
+        const num1 = +input1;
+        const num2 = +input2;
+        const num3 = +input3;
+        const num4 =num1*num2;
+        const num5 =num4*num3;
+        document.write(`<P>월급:${num1}*${num2}=${num4}</p>`,`<p>연봉:${num4}*${input3}=${num5}`);
+            
+            // const input = prompt('최저입금 입력:');
+            // const minimumWage = +input;
+            // const BASE_TIME = 209;
+            // const MONTH_OF_YEAR =12;
+            // const num1 =minimumWage*BASE_TIME;
+            // const num2 =num1*MONTH_OF_YEAR;
+            // document.write(`<p>${num1}</p> <p>${num2}</p>`);
+        </script>
+        </body>
+</html>

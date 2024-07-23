@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <style>
+        /*요소들의 기본 마진이나 패딩을 리셋시키자 
+        전체 선택자 {universal selector}*/
+        * {margin: 0; padding: 0;}
+        ul{ list-style: none;}
+        li{display: inline-block;
+        background-color: violet;
+        width: 50px; text-align: center;height: 40px;line-height: 40px;
+    border: 1px solid blue;}
+        a {text-decoration: none; color: white;
+        display: block;}
+        li:hover {background-color: aqua; font-weight:bold;
+        text-decoration: underline; border: 1px solid red;}
+    </style>
+        </head>
+    <body>
+        <ui>
+            <li><a href="#">home</a></li>
+            <li><a href="#">as</a></li>
+            <li><a href="#">link</a></li>
+            <li><a href="#">about</a></li>
+        </ui>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>제곱 계산기</h1>
+    <div>
+    <input type="text" id="num" value>
+    <button onclick="plus()">제곱계산</button>
+    <p>결과:<span id="result"></span></p>
+    </div>
+    <script>
+        // 함수 정의 > 실행과는 별개의 개념
+        // 함수 호출 정의는 분리되어있다.  함수의 쓰는법:계산();
+        function plus(){
+        const input= document.getElementById("num");
+        const span = document.getElementById("result");
+        const num = +input.value;
+        const result = num*num;
+        span.innerHTML = result;
+    }
+        // document.querySelector("#num");
+    </script>
+</body>
+</html>

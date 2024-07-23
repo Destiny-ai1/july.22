@@ -1,0 +1,22 @@
+<html>
+    <head>
+<!-- 현재상태 -->
+    </head>
+    <body>
+        <img src="https://www.w3schools.com/js/pic_bulboff.gif" id="img">
+        <button onclick="버튼()"> 점등,소등</button>
+    <script>
+       let switchon =false;
+       const img=document.getElementById('img');
+       function 버튼(){
+        if(switchon==true)
+       {switchon==false;
+        img.src="https://www.w3schools.com/js/pic_bulboff.gif";
+       } else {
+            switchon =true;
+        img.src="https://www.w3schools.com/js/pic_bulbon.gif";
+        }
+    }
+    </script>
+    </body>
+</html>

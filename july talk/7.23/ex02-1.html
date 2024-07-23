@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--최저 임금을 입력하면 월 최저급여를 출력하시오 -->
+</head>
+<body>
+    <h1>월 최저급여</h1>
+    <div>
+        <input type="text" id="num" value>
+        <button onclick="plus()">계산</button>
+        <p>결과:<span id="result">원</span></p>
+    </div>
+    <script>
+        function plus(){
+        const num1 = 209
+        const input = document.getElementById("num");
+        const span = document.getElementById('result');
+        const num = +input.value;
+        const result =num*num1;
+        span.innerHTML =result;
+        }
+    </script>
+</body>
+</html>

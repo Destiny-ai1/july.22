@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>html Entity</title>
+        <h1>html의 특수문자</h1>
+        <style>
+            .nav{
+                background-color: rgba(0, 0, 0, 0.8);
+                color: aqua;
+                font-size: 1.5em;
+                text-align: center;
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+            }
+            .nav{position: absolute;}
+            #girl{position: relative;width: 1000px; margin: auto;}
+            #left{left: 0px; top: 150px;}
+            #right{right:0px; top: 150px;}
+            .nav:hover{cursor: pointer;}
+            /* .nav{float:left} */
+        </style>
+    </head>
+    <body>
+        <!-- 임의의 위치로 이동 시킨다 (position = 사진이든 뭐든 겹칠때 쓰는 속성) 
+            부모는 relative
+            이동할 요소: absolute-->
+            <div id="girl">
+        <div class="nav" id="left">&lt;</div>
+        <img src="https://www.w3schools.com/howto/img_lights_wide.jpg">
+        <div class="nav" id="right">&gt;</div>
+        </div>
+    </body>
+</html>

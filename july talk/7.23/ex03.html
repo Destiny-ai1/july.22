@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <title>두숫자를 입력받아 덧셈결과를 출력하시오</title> -->
+</head>
+<body>
+    <div>
+    <h1>덧셈 결과를 출력하시오</h1>
+    <!-- <input type="text" id="num" value>
+    <input type="text2"id ="num1"value>
+    <button id="onclick"></button> -->
+    <input type="number" placeholder="1번숫자" id="num1">+
+    <input type="number" placeholder="2번숫자" id="num2">=
+    <!-- <input type="number" id="num3" readonly> -->
+    <input type="number" id="num3" disabled>
+    <button onclick="더하기()">더하기</button>
+    </div>
+    <script>
+        function 더하기(){
+            // 입력값을 문자열로 읽어온다
+            const input = document.getElementById("num1").value;
+            const input2 = document.getElementById("num2").value;
+            // num1 이 빈문자열 , num2 는 빈문자열이면 오류처리
+            // if(돈>5000) 예를들어 내가 5천원 보다 크면  쓸수있다.
+            if(input==''){alert('첫번째 숫자 입력'); return;}
+            if(input2==''){alert('두번째 숫자 입력'); return;}
+            num1 =+('input');
+            num2 =+('input2');
+            document.getElementById("num3").value =num1+num2;
+        }
+    </script>
+</body>
+</html>

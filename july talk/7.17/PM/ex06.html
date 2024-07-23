@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //증감연사자(++,--)가 단독으로 사용될때는 증감한다
+        //즉 전위, 후위가 동일
+        // >>증감연산과 같이 쓸경우<<
+        let a = 10;
+        let b = 25;
+        const c= a++;
+        const d= ++b;
+        console.log (`${a}:a, ${b}:b`); //11,11
+        console.log (`${3}:c, ${d}:d`); //10,11
+    </script>
+</body>
+</html>

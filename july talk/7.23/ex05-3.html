@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            .boy{
+                height: 50px;
+                width: 50px;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.342);
+                color: white;
+                line-height: 50px;
+                font-size: 2.0em;}
+            .boy {position: absolute;}
+            #girl{position: relative; margin: auto; width: 1000px;} 
+            #left{left: 0px; top: 150px;}
+            #right{right: 0px; top: 150px;}
+            .boy:hover{cursor: pointer;}
+        </style>
+    </head>
+    <body>
+        <div id="girl">
+        <div class="boy" id="left" onclick="left()">&lt;</div>
+        <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" id="img">
+        <div class="boy" id="right" onclick="right()">&gt;</div>
+        </div>
+    </body>
+    <script>
+        let index =0;
+        const photos =['img_lights_wide.jpg','img_mountains_wide.jpg',
+        'img_snow_wide.jpg','img_nature_wide.jpg'];
+        const img= document.getElementById('img');
+        function left()
+        {index--;
+            if(index<0)
+            {index=3;}
+        img.src=`https://www.w3schools.com/howto/${photos[index]}`;
+    }
+
+    const photo =['img_lights_wide.jpg','img_mountains_wide.jpg',
+        'img_snow_wide.jpg','img_nature_wide.jpg'];
+        function right()
+        {index++;
+            if(index>3)
+        {index=0}
+        img.src=`https://www.w3schools.com/howto/${photos[index]}`;
+        }
+        // 배열은 값들에 인덱스를 준다
+        // let i= 0;
+        // const ai= ['hello','어둠','빛'];
+        // console.log(ai[i++]);
+        // console.log(ai[i++]);
+        // console.log(ai[i++]);
+    </script>
+</html>
