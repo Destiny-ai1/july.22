@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style>
+            .error{
+                display: none; color: red; font-size: 0.8em;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="">
+            <label for="username"></label>아이디:</label>
+            <input type="text" id="username" name="username" placeholder="입력하세요">
+            <button type="button" onclick="usernameCheck()">클릭</button>
+            <span id="username-msg" class="error"></span>
+        </form>
+        <script>
+            const username = document.getElementById('username');
+            const usernamemsg = document.getElementById('username-msg');
+
+            function usernameCheck(){
+                usernamemsg.innerHTML="";
+                usernamemsg.style.display="none";
+                if(username.value==''){
+                    usernamemsg.innerHTML="아이디를 입력하세요";
+                    usernamemsg.style.display ='block';
+                }
+
+            }
+     </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="bubho"></div>
+    <div id="irum"></div>
+    <div id="tel"></div>
+    <div id="adder"></div>
+    <div id="target"></div>
+    <script>
+      const a1={
+            번호:1, 이름:'땡땡땡', 
+            연락처:'123',주소:'서울시'};
+            document.getElementById('bubho').innerHTML=a1.번호
+            document.getElementById('irum').innerHTML=a1.이름
+            document.getElementById('tel').innerHTML=a1.연락처
+            document.getElementById('adder').innerHTML=a1.주소
+
+            const html=`
+            <div>${a1.번호}</div>
+            <div>${a1.이름}</div>
+            <div>${a1.연락처}</div>
+            <div>${a1.주소}</div>
+            <div><button>Delet</button></div>
+            `;
+            document.getElementById('target').innerHTML=html;
+    </script>
+</body>
+</html>

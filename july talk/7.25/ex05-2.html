@@ -1,0 +1,12 @@
+<html>
+    <!-- get/post 모두 데이터를 urlencode 형식으로 보낸다
+     단 get 은 urencoded 된 데이터가 주소창에 보인다  (querystring)
+     post urlencoded 된 데이터가 보이지않는다 -->
+    <body>
+        <form method="get" action="http://192.168.0.54:8081/server/get1">
+            <input type="id" name="urencoded" value="spring">
+            <!-- <input type="password" name="password" value="1234"> -->
+            <button>로그인</button>
+        </form>
+    </body>
+</html>
