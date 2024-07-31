@@ -1,0 +1,28 @@
+<html>
+    <!-- 나이를 입력받아 24세까지 , 성인으로 출력하시오  -->
+    <body>
+        <input type="text" id="nai">
+        <button onclick="plus">계산</button>
+
+        <script>
+            naiinput= document.querySelector("#nai");
+            btn = document.querySelector('#btn');
+
+            naiinput.addEventListener('keydown',function(e){
+                if(e,keyCode===13){
+                    const nai = parseInt(e.target.value);
+                    if(nai>=25)
+                    alert('성인');
+                else alert('미성년자');
+                }
+            });
+
+            btn.addEventListener('click',function(){
+             const nai = parseInt(naiinput.value);
+             if(nai>=25)
+             alert('성인');
+            else alert('미성인');   
+            });
+        </script>
+    </body>
+</html>

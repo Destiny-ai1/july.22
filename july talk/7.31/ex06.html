@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            $('#choice').click(function(){
+                alert($('#menu').val());
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>select input</h1>
+    <select id="menu">
+        <option selected disabled>메뉴</option>
+        <option>탕수육</option>
+        <option>양장피</option>
+        <option>고량주</option>
+    </select>
+    <button id="choice">선택</button>
+</body>
+</html>

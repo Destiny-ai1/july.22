@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 25~64면 입장료가 3천원 기타는 무료
+     나이를 입력하여 입장료를 출력하시오 -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+</head>
+<body>
+    <input type="number" id="nai">
+    <button id="btn">버튼</button>
+    <script>
+        const $nai= $('#nai');       
+        $nai.keydown(function(e){
+            const nai= nai.val();
+            if(e.keyCode===13){
+                if(nai>=25&&nai<65) 
+                alert('3000');
+            else
+                alert('공짜');
+            }
+        });
+
+        // btn.click(function(){
+        //     const nai= nai.val();
+        //     if(nai>=25)
+        //     alert('3000');
+        // else
+        //     alert('공짜');
+            
+        // });
+    </script>
+</body>
+</html>

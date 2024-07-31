@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+          const $num = $('#num');
+          const $result = $('#result');
+          const $calc = $('#calc');
+          const $reset = $('#reset');
+
+          $reset.click(function(){
+            $num.val('').attr('placeholder','');
+            $result.val('');
+          });
+
+          $calc.click(function(){
+            const num = parseFloat ($num.val());
+            if(isNaN(num)){
+            $num.attr('placeholder','숫자를입력하세요').focus();
+            return;
+            }
+            const result = num*num;
+            $result.val(result);
+            });
+    })
+    </script>
+</head>
+<body>
+    숫자 입력:<input type="number" id="num">
+    리셋:<input type="number" id="result" disabled>
+    <button id="calc">제곱</button>
+    <button id="reset">리셋</button>
+</body>
+</html>

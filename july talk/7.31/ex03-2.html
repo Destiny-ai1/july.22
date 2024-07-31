@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        #target{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="target"></div>
+    <button id="toggle">toggle</button>
+    <script>
+        // const target= $('#toogle');
+        // let isVisible= true;
+        // $('#toogle').click(function()
+        // {if(isVisible===true){
+        //     $target.css('display','none');
+        //     isVisible = false;
+        // } else{
+        //     $target.css('display','block');
+        //     isVisible = true;
+        // }
+        // });
+        const $target= $('#target');
+        let isVisible= true;
+
+        $('#target').click(function(){
+            const value = $target.css('display');
+            if(value==='none'){
+                $target.css('display','block');
+            }   else if(value==='block'){
+                $target.css('display','none');
+            }
+        })
+    </script>
+</body>
+</html>

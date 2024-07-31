@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+</head>
+<body>
+    <div id="target">로또당첨</div>
+        <script>
+            const target = document.querySelector('#target');
+            console.log('target');
+// jQuery 로 요소를 선택하면 html 요소+ 각종 jQuery 메소드들이 추가된다
+            const $target = $('target');
+            console.log($target);
+// jQuery 객체가 가진 html 요소에 접근방법
+            console.log($target[0]);
+        </script>
+</body>
+</html>

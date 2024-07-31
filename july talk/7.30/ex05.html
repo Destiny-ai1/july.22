@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+</head>
+<body>
+    <input type="number" id="nai">
+    <button id="btn">버튼</button>
+    <script>
+        const $nai= $('#nai');                   //naiinput= document.querySelector("#nai");
+        const $btn= $('#btn');                   //btn = document.querySelector('#btn');
+
+        btn.click(function(){
+            const nai= nai.val();
+            if(nai>=25)
+            alert('성인');
+        else
+            alert('미성년자');
+        });
+    </script>
+</body>
+</html>

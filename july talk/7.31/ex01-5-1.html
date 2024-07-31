@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무지개색 문제</title>
+    <style>
+        #q{display: flex;
+            align-items: center; 
+            justify-content: center;
+            background-color: dodgerblue;
+            height: 100px;
+            width: 500px;
+        }
+        #q>div{display: flex;
+            height: 50px;
+            width: 500px;
+            justify-content: center;              
+            align-items: center;}
+    </style>
+</head>
+<body>
+    <div id="q">
+    </div>
+    <script>
+        const ar = [
+            {css:{backgroundColor:'red',flexGrow:'1'}, text:'빨'},    
+            {css:{backgroundColor:'orange',flexGrow:'1'}, text:'주'},
+            {css:{backgroundColor:'yellow',flexGrow:'1'},text:'노'},
+            {css:{backgroundColor:'green',flexGrow:'1'},text:'초'},
+            {css:{backgroundColor:'blue',flexGrow:'1.5'},text:'파'},
+            {css:{backgroundColor:'indigo',flexGrow:'2'},text:'남'},
+            {css:{backgroundColor:'purple',flexGrow:'3'},text:'보'},
+        ]
+        const $q = $('#q');
+        for (let i=0; i<ar.length; i++){
+            $q.append($('<div>').css(ar[i].css).text(ar[i].text));
+        }
+    </script>
+</body>
+</html>
