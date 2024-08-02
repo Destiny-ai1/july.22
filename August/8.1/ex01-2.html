@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            const $key = $('#key');
+            const $kg = $('#kg');
+            const $click = $('#click');
+
+            $click.click(function(){
+                cosole.log($key.val());
+                consle.log($kg.val());
+                if(isNaN(key)){
+                    $key.attr('placeholder','숫자를입력하세요');
+                    $kg.attr('placeholder','숫자를입력하세요');
+                } return;
+                const click = kg/(key/key);
+                alert();
+            }) 
+        })
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>bmi 계산</legend>
+        키:<input type="number" id="key">
+        체중:<input type="number" id="kg">
+        <button id="clock">계산</button>
+    </fieldset>
+</body>
+</html>

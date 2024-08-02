@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지옮기기2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #check>div{
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            margin: 0 3px 0 3px;
+        }
+        #check{
+            display: flex;
+            justify-content:center ;
+        }
+        .choice{
+            background-color: darkgray;
+        }
+        .not-choice{
+            background-color: darkgray;
+        }
+    </style>
+    <script>
+        const images = [];
+        images[0] = 'https://www.w3schools.com/howto/img_woods_wide.jpg';
+        images[1] = 'https://www.w3schools.com/howto/img_5terre_wide.jpg';
+        images[2] = 'https://www.w3schools.com/howto/img_mountains_wide.jpg';
+        images[3] = 'https://www.w3schools.com/howto/img_snow_wide.jpg';
+        let = 0;
+        // 여러가지 요소를 선택해서 이벤트를 지정할때 어떤값이 들어갔는지 확인하기위해선 $(this)
+        $(document).ready(function(){
+        $('.group').click(function(){                                       
+            $('.group').css('backgroundColor','lightgray');
+            $(this).css('backgroundColor','black');
+
+            $('.group').removeClass('choice');
+            $('.group').addClass('not-choice');
+            $(this).removeClass('not-choice');
+            $(this).addClass('choice');
+        });
+    })
+    </script>
+</head>
+<body>
+    <div id="way">
+        <img>
+        <div>left</div>
+        <div>right</div>
+    </div>
+    <div id="check">
+    <div class="group choice">1</div>
+    <div class="group not-choice">2</div>
+    <div class="group not-choice">3</div>
+    <div class="group not-choice">4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            const $num = $('#num');
+            const $click = $('#click');
+            // 이벤트가 발생한 곳을 이벤트 핸들러 내부에서 this로 접근할수있다.
+            $num.change(function(){                             
+                console.log($(this).val());
+            })
+            // $num.change(function(){
+            //     console.log($num.val());
+            // });
+            $click.click(function(){
+                console.log($click.val());
+            });
+        })
+    </script>
+</head>
+<body>
+    <select id="num">
+        <option disabled>월선택</option>
+        <option>1월</option>
+        <option>2월</option>
+        <option>3월</option>
+        <option>4월</option>
+        <option>5월</option>
+        <option>6월</option>
+        <option>7월</option>
+        <option>8월</option>
+        <option>9월</option>
+        <option>10월</option>
+        <option>11월</option>
+        <option>12월</option>
+    </select>
+    <button id="click">choice</button>
+    <!-- 1.버튼을 눌렀을때 select에 접근하게만든다
+         2. -->
+</body>
+</html>

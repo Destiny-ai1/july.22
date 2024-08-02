@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>체중계산</title>
+    <script>
+        $(document).ready(function(){
+            const $key = $('#key');
+            const $gender = $('#gender');
+            const $boy = $('#boy');
+            const $girl = $('#girl');
+            const $kg = $('#kg');
+            const $hap = $('#hap');
+            const $reset = $('#reset');
+
+            $('#reset').click(function(){
+                location.reload();
+            });
+
+            $('#hap').click(function(){
+                const key = $key.val();
+                const gender = $gender.val();
+                if(isNaN(key)){
+                    $key.attr('placeholder','키를 입력하시오');
+                    return;
+                }
+                if(gender==1){
+                    alert(`${key-110}kg`);
+                }  else{
+                    alert(`${key-105}kg`);
+                }
+            })
+            // $reset.click(function(){
+            // $key.val('').attr('placeholder','');
+            // $reset.val('');
+        });  
+
+    </script>
+</head>
+<body>
+    <h1>남/여 적정 체중 계산기</h1>
+    키:<input type="number" id="key"><br>
+    성별:<select id="gender">
+        <option value="1">남자</option>
+        <option value="1">여자</option>
+        </select>
+    <div>
+        <p id="Kg">적정 체중: Kg</p>
+    </div>
+    <button id="hap">계산</button>
+    <button id="reset">리셋</button>
+</body>
+</html>

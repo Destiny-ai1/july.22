@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지옮기기 화살표넣기2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #home{
+            width: 640px; margin: 0 auto; }
+        #way>div{
+            width: 45px;
+            background-color: rgba(200, 200, 200, 0.7);
+            height: 99%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        #way{position: relative;}
+        #left{left: 0px; top: 0px;}
+        #right{right: 0px; top: 0px;}
+    </style>
+</head>
+<body>
+    <div id="home">
+        <div id="way">
+            <img src='https://www.w3schools.com/howto/img_woods_wide.jpg' id="img" width="640">
+            <div id="left" >left</div>
+            <div id="right">right</div>
+        </div>
+        <div id="check">
+            <div class="choice" data-index="0"></div>              
+            <div data-index="1"></div>
+            <div data-index="2"></div>
+            <div data-index="3"></div>
+        </div>
+    </div>
+    <script>
+        const images = [];
+        images[0] = 'https://www.w3schools.com/howto/img_woods_wide.jpg';
+        images[1] = 'https://www.w3schools.com/howto/img_5terre_wide.jpg';
+        images[2] = 'https://www.w3schools.com/howto/img_mountains_wide.jpg';
+        images[3] = 'https://www.w3schools.com/howto/img_snow_wide.jpg';
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 옮기기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        const images = [];
+        images[0] = 'https://www.w3schools.com/howto/img_woods_wide.jpg';
+        images[1] = 'https://www.w3schools.com/howto/img_5terre_wide.jpg';
+        images[2] = 'https://www.w3schools.com/howto/img_mountains_wide.jpg';
+        images[3] = 'https://www.w3schools.com/howto/img_snow_wide.jpg';
+
+        function init($img) {
+            $img.attr('src',images[0]).css('width','640px',);
+        }
+
+        $(document).ready(function(){
+            const $img =$('#img');
+            let index =0;
+            init($img);
+
+        $('#back').click(function(){
+            index--;
+            if(index<0)
+                index=3;
+            $img.attr('src',images[index]);
+
+        });
+        $('#next').click(function(){
+            index++;
+            if(index>3)
+            index=0;
+            $img.attr('src',images[index]);
+        });
+        });
+
+        // $(document).ready(function(){
+        // const $img = $('#img');
+        // $img.attr('src',images[0]).css('width','640px');
+        // });
+    </script>
+</head>
+<body>
+    <img id="img">
+    <button id="back">뒤로</button>
+    <button id="next">앞으로</button>
+</body>
+</html>

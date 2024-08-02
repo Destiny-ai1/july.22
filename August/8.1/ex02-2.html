@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지옮기기 화살표넣기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #check{
+            display: flex;
+            justify-content: center;
+        }
+        #check .choice{
+            background-color: darkgray;
+        }
+        #check>div{
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            margin: 0 3px 0 3px;
+            background-color: lightgray;
+        }
+        #left,#right{
+            position: absolute;
+            text-align: center;
+        }
+        
+        #way{
+            position: relative; width: 640px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="home">
+        <div id="way">
+            <img id="img">
+            <div id="left">left</div>
+            <div id="right">right</div>
+        </div>
+        <div id="check">
+            <div class="choice" data-index="0">1</div>               <!--태그의 값을 저장할떄 >data-a<  -->
+            <div data-index="1">2</div>
+            <div data-index="2">3</div>
+            <div data-index="3">4</div>
+        </div>
+    </div>
+    <script>
+        const images = [];
+        images[0] = 'https://www.w3schools.com/howto/img_woods_wide.jpg';
+        images[1] = 'https://www.w3schools.com/howto/img_5terre_wide.jpg';
+        images[2] = 'https://www.w3schools.com/howto/img_mountains_wide.jpg';
+        images[3] = 'https://www.w3schools.com/howto/img_snow_wide.jpg';
+
+        const $img =$('#img');
+
+        function init(){
+            $img.attr('src',images[0]);
+        }
+
+        init();
+
+        $('#check>div').click(function(){
+            $('#check>div').removeClass('choice');
+            $(this).addClass('choice')
+            const index = $(this).data('index');
+            $img.attr('src',images[index]);
+            
+        })
+    </script>
+</body>
+</html>
