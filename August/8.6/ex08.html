@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 오픈api</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr><th>순위</th><th id="aa">제목</th><th>개봉일</th><th>관객</th><th>누적관객</th><th>점유율</th></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    <script>
+        // const url ="http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
+        const key ="6dadf09fa22b0ab8f399c4161a5d48d9";
+        const targetDt='20240805';
+        const params = {key:key , targetDt:targetDt};
+        $.ajax({
+            url:"http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json",
+            data: params,
+            // data에 JS객체를 주면 $.ajax에서 urlencoded로 자동변환
+            success:function(result){
+                for(const m of result.boxOfficeResult.dailyBoxOfficeList){
+                 console.log(m);
+                    const row =`
+                 <tr>
+                    <td>${m.rank}</td>
+                    <td>${m.movieNm}</td>
+                    <td>${m.openDt}</td>
+                    <td>${m.audiCnt}명</td>
+                    <td>${m.audiAcc}명</td>
+                    <td>${m.salesShare}%</td>
+                </tr>`
+                $('#tbody').append(row);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>await, catch , try 사용법</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>주소</th>
+                <th>연락처</th>
+                <th>사진</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+<ul class="pagination">
+</ul>
+
+    <script>
+        const pagesize= 20;                                      /* 대문자로 적으면 상수다*/
+        const url= 'https://sample.bmaster.kro.kr/contacts';
+        let pageno=location.search.substr(8);
+        if(pageno=="")    
+            pageno="1";
+
+        function printContacts(contacts){
+            const $tbody=$('#tbody');
+            $tbody.empty();
+            for(const c of contacts){
+                const link= `read.html?no=${c.no}`
+                const row =`
+                <tr>
+                    <td><a href=${link}>${c.name}</a></td>
+                    <td>${c.address}</td>
+                    <td>${c.tel}</td>
+                    <td>${c.image}</td>
+                </tr>`;
+                $tbody.append(row);
+            } 
+        }
+
+        function calcpagination(totalcount){
+            const contactspage = 10;
+            const pageblock= 5;
+            const numberOfpages= Math.ceil(totalcount/contactspage);
+            
+            const back =(Math.ceil(pageno/pageblock)-1)*pageblock;
+            
+            const start = back+1;
+
+            let end = back+pageblock;
+
+            let next= end+1;
+
+            if(end>=numberOfpages){
+                end=numberOfpages;
+                next=0;
+            }
+            return{back, start, end, next};
+        }
+
+        function printpagination({back, start , end , next}){
+            const $pagination =$('.pagination');
+            if(back>0){
+                const backpage = `<li class="page-item"><a class="page-link" href="list.html?pageno=${back}">이전</a></li>`
+                $pagination.append(backpage);
+            }
+            for(let i=start; i<=end; i++){
+                const page = `<li class="page-item"><a class="page-link" href="list.html?pageno=${i}">${i}</a></li>`
+                $pagination.append(page);
+            }
+            if(next>0){
+                const nextpage =`<li class="page-item"><a class="page-link" href="list.html?pageno=${next}">다음</a></li>`
+                $pagination.append(nextpage);
+            }
+        }   
+        async function fetchapi(){
+        const data = {pageno,pagesize};
+
+        const result= await $.ajax({url:url, data});                              
+        printContacts(result.contacts);
+        const pagination = calcpagination(result);
+        printpagination(pagination);                                /*result로 넘기면 totalcount, pageno ,pagesize가 속해있다*/
+                            
+        };
+        fetchapi();
+        /*
+        비동기 작업의 결과 지금은 모를떄 >promise< 를 사용하여 미래에 값이 도착하게한다
+        await 쓸려면 혼자 쓸수는 없고 try도 같이써야되고
+         function 앞에 async 가 붙어야된다.
+         
+         구조분해 할당 한번더 집고가기
+    ex)     const a = 10;
+            const b = 20;
+            const obj = {a,b};             변수들을 모아서 객체를 만드는 방법
+            
+            const obj2={irum:'xxx',nai:00};
+            const {irum,nai} = obj2;       객체를 변수들로 분해하는 방법
+            */
+    </script>
+    <!-- <ul>
+        <li><a href="list.html?pageno=1"></a></li>
+        <li><a href="list.html?pageno=2"></a></li>
+        <li><a href="list.html?pageno=3"></a></li>
+    </ul> -->
+</body>
+</html>

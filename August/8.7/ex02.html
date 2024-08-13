@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연락처 만들어보기</title>
+    <!-- 연락처: 번호 이름 주소 전화번호 사진 집어넣기 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>순서</th>
+                <th>이름</th>
+                <th>주소</th>
+                <th>전화번호</th>
+                <th>사진</th>
+            </tr>
+        <tbody id="tbody"></tbody>
+        </thead>
+    </table>
+    <script>
+        const page = 1;
+        const contactsperpage= 10;
+        const pagesperblock = 5;
+        
+        for(let i= 128; i<=132;i++){
+                p = Math.floor(i/10)+1;
+            console.log(`${i}:${p}`);
+        }
+        $.ajax({
+            url:"https://sample.bmaster.kro.kr/contacts",
+            success:function(result){
+                
+            //     console.log(result);
+            // totalcount= result.totalcount;                             //코드에 값이 적혀있는 것을 : literal
+            // totalcount/contactsperpage;
+            }
+        })
+    </script>
+    <!-- <script>
+        const url="https://sample.bmaster.kro.kr/contacts";
+        function fetchapi(){
+            const contacts =
+        }
+    </script>  
+    페이지당 글의 갯수  contactsperpage=10
+                      pagesperblock=5
+    -->
+</body>
+</html>

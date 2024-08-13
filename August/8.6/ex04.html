@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <form action="http://192.168.0.54:8081/mvc/user" id="form">
+        <input type="text" id=irum name="irum">
+        <input type="date" id="birthday" name="birthday"></input>
+        <!-- <data value="2024.08.06"></data> -->
+        <button type="button" onclick="push();">push</button>
+    </form>
+    <script>
+        function push(){
+            const irum= $('#irum').val;
+            const date= $('#birthday').val;
+            console.log(irum);
+            console.log(date);
+            if(irum==''){
+                alert('이름을 입력하세요');
+                return false;
+            }
+            if(birthday==''){
+                alert('생일을 입력하세요');
+                return false;
+            }
+            $('#form').submit();
+            console.log(form);
+        };
+    </script>
+</body>
+</html>

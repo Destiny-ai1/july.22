@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <script>
+            for (let pageno=1; pageno<=14;pageno++){
+                const back = Math.floor((pageno-1)/5)*5; 
+                const start =back+1;
+                let end = back+1;
+                let next = end +1;
+                if(end>=14){
+                    end=14;
+                    next=0;
+                }
+                console.log(`pageno: ${pageno} ${back} ${start} ${end} ${next}`);
+        }
+        </script>
+    </body>
+</html>
+
+
+
+<!-- 1~5사이를 
+start=1
+end=5
+end>5 -->

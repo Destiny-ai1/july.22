@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- ajax : 화면을 부분 갱신하는 기술
+             rest : ajax를 이용해서 웹 앱을 개발하는 방식
+             spa :  앱 전체가 하나의 페이지  -->
+</head>
+<body>
+    <!-- <form action="http://192.168.0.54:8081/mvc/sum1" id="form">
+    </form> -->
+    <script>
+        $.ajax({
+            url:"http://192.168.0.54:8081/rest/username",
+            date:'username=spring',
+            success : function() {
+                console.log('서버의 응답');
+            }
+        });
+
+        $.ajax({});
+
+        $.ajax({}).done().faile();
+
+        $.ajax({});Then().catch();
+
+        // try{
+        //     $ajax
+            
+        // }
+    </script>
+</body>
+</html>

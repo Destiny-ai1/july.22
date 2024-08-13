@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서버에서 응답하는 표준</title>
+</head>
+<body>
+     <script>
+        const obj = {
+            irum : 'XXX',
+            nai : 20,
+            birthday:{ year:1995, month:7, day:23}
+        };
+        const jsonString = JSON.stringify(obj);
+        console. log(jsonString);                                   /*JS객체를 json으로 변환형태*/
+
+        const obj2 = JSON.parse(jsonString);
+        console. log(obj2);                                         /*json 객체로 변환한 형태*/
+     </script>
+</body>
+</html>

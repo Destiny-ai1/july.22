@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서버주소 더하기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <form action="http://192.168.0.54:8081/mvc/sum2" id="myform">
+    <input type="text" name="a" id="a">
+    <input type="text" name="b" id="b">
+    <input type="text" name="c" id="c">
+    <button type="button" onclick="check();">add</button>
+    </form>
+    <script>
+        function check() {
+            const a =$('#a').val();
+            const b =$('#b').val();
+            const c =$('#c').val();
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            if(a==''|| b==''|| c==''){
+                alert('숫자를 입력하세요');
+                return false;
+            }
+            $('#myform').submit();
+        };
+    </script>
+</body>
+</html>

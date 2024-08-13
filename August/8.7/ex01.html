@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 오픈api 2(뒤로 앞으로 전날 내일로 추가하기)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    
+</head>
+<body>
+    <script>
+        const d1 = dayjs();
+        // console.log(d1);
+        console.log(d1.format("YYYYMMDD"));
+
+        const d2 = dayjs().subtract(1,"day");
+        console.log(d2.format("YYYYMMDD"));
+        console.log(d2);
+
+        const d3 = dayjs().add(1,"day");
+        console.log(d3.format("YYYYMMDD"));
+
+        const diff = d3.diff(d2,"day");
+        console.log(diff);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagination 다시한번 복습</title>
+</head>
+<body>
+    <table class="table table-hover">
+    <thead>
+    </thead>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+    <!-- 블록당 5페이지
+        첫번째 블록 1 2 3 4 5 다음(6)
+        두번째 블록 이전(5)6 7 8 9 10 다음(11)->
+        마지막 블록 이전(10) 11 12
+        해야될것 페이지의 갯수, 뒤로 가는 값,시작으로 , 끝으로 ,다음으로 -->
+    <script>
+        for (let i=128; i<=132; i++){
+            console.log(Math.ceil(i/10));
+        };
+       const blockpage =5;
+       for(let pageno =1; pageno<=14; pageno++){
+        const back =(Math.ceil(pageno/blockpage)-1)*5;
+        console.log(`pageno:${pageno}-back:${back}`);
+       } 
+    </script>
+</body>
+</html>
